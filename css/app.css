@@ -30,6 +30,11 @@ a{
 
 }
 
+input{
+  font-size: 15px;
+  width: 50%;
+}
+
 .giphy-details{
   width: 110%;
   margin-top: 30px;
