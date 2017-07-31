@@ -24837,7 +24837,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _giphy_actions = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../actions/giphy_actions\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+var _giphy_actions = __webpack_require__(230);
 
 var GiphysReducer = function GiphysReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
@@ -24852,6 +24852,12 @@ var GiphysReducer = function GiphysReducer() {
 };
 
 exports.default = GiphysReducer;
+
+/***/ }),
+/* 230 */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/Users/Fzee/Desktop/GiphyApp/actions/giphy_actions'\n    at Error (native)");
 
 /***/ })
 /******/ ]);
