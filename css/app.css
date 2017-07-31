@@ -1,0 +1,45 @@
+html{
+  font-family: monospace;
+}
+.giphy-li{
+  list-style: none;
+  width: 90%;
+  border: 2px solid #FF5A5F;
+  background: black;
+  border-radius: 4px;
+  margin: 5px;
+}
+
+.giphy-li img{
+  width: 70%;
+}
+
+a{
+  text-decoration: none;
+}
+
+#head{
+  margin: 0 auto;
+  height: 300px;
+  width: 60%;
+  text-align: center;
+}
+
+#head img{
+  height: 50%;
+}
+
+#search{
+  margin: 0 auto;
+  width: 60%;
+  text-align: center;
+}
+
+ul{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#uldiv{
+  width: 25%;
+}
