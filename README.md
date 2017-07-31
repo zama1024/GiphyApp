@@ -1,4 +1,4 @@
-#GiphyApp
+# GiphyApp
 
 ## GiphyApp uses the Giphy API to fetch gifs based on search words.
 
