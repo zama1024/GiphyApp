@@ -25051,6 +25051,10 @@ var _giphys_index_item = __webpack_require__(237);
 
 var _giphys_index_item2 = _interopRequireDefault(_giphys_index_item);
 
+var _giphy_details = __webpack_require__(238);
+
+var _giphy_details2 = _interopRequireDefault(_giphy_details);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -25068,6 +25072,7 @@ var GiphysIndex = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (GiphysIndex.__proto__ || Object.getPrototypeOf(GiphysIndex)).call(this, props));
 
     _this.state = {
+      showDetails: false,
       giphyID: ''
     };
     return _this;
@@ -25076,7 +25081,7 @@ var GiphysIndex = function (_React$Component) {
   _createClass(GiphysIndex, [{
     key: 'details',
     value: function details(giphy) {
-      this.setState({ giphyID: giphy.id });
+      this.setState({ showDetails: true, giphyID: giphy.id });
     }
   }, {
     key: 'render',
@@ -25086,8 +25091,18 @@ var GiphysIndex = function (_React$Component) {
       var index = this.props.giphys.map(function (giphy) {
         return _react2.default.createElement(
           'div',
-          { id: 'uldiv', onClick: _this2.details.bind(_this2, giphy), key: giphy.id },
-          _react2.default.createElement(_giphys_index_item2.default, { giphy: giphy })
+          { id: 'uldiv', key: giphy.id },
+          _react2.default.createElement(
+            'div',
+            { onClick: _this2.details.bind(_this2, giphy) },
+            _react2.default.createElement(_giphys_index_item2.default, { giphy: giphy })
+          ),
+          _react2.default.createElement(
+            'div',
+            { id: 'box' },
+            _react2.default.createElement('div', null),
+            _this2.state.showDetails && _this2.state.giphyID === giphy.id ? _react2.default.createElement(_giphy_details2.default, { giphy: giphy }) : null
+          )
         );
       });
       return _react2.default.createElement(
@@ -25131,6 +25146,65 @@ function GiphysIndexItem(_ref) {
 }
 
 exports.default = GiphysIndexItem;
+
+/***/ }),
+/* 238 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(25);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function GiphyDetails(_ref) {
+  var giphy = _ref.giphy;
+
+  return _react2.default.createElement(
+    "div",
+    { className: "giphy-details" },
+    _react2.default.createElement("img", { src: giphy.images.fixed_height.url }),
+    _react2.default.createElement(
+      "h4",
+      null,
+      "URL: ",
+      _react2.default.createElement(
+        "span",
+        null,
+        giphy.images.fixed_height.url
+      )
+    ),
+    _react2.default.createElement(
+      "h4",
+      null,
+      "Rating: ",
+      _react2.default.createElement(
+        "span",
+        null,
+        giphy.rating
+      )
+    ),
+    _react2.default.createElement(
+      "h4",
+      null,
+      "Import date: ",
+      _react2.default.createElement(
+        "span",
+        null,
+        giphy.import_datetime
+      )
+    )
+  );
+}
+
+exports.default = GiphyDetails;
 
 /***/ })
 /******/ ]);
