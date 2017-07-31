@@ -24762,7 +24762,7 @@ var _reduxThunk = __webpack_require__(227);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
-var _root_reducer = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../reducers/root_reducer\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+var _root_reducer = __webpack_require__(228);
 
 var _root_reducer2 = _interopRequireDefault(_root_reducer);
 
@@ -24802,6 +24802,56 @@ var thunk = createThunkMiddleware();
 thunk.withExtraArgument = createThunkMiddleware;
 
 exports['default'] = thunk;
+
+/***/ }),
+/* 228 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _redux = __webpack_require__(206);
+
+var _giphys_reducer = __webpack_require__(229);
+
+var _giphys_reducer2 = _interopRequireDefault(_giphys_reducer);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = (0, _redux.combineReducers)({
+  giphys: _giphys_reducer2.default
+});
+
+/***/ }),
+/* 229 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _giphy_actions = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../actions/giphy_actions\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+var GiphysReducer = function GiphysReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  var action = arguments[1];
+
+  switch (action.type) {
+    case _giphy_actions.RECEIVE_SEARCH_GIPHYS:
+      return action.giphys;
+    default:
+      return state;
+  }
+};
+
+exports.default = GiphysReducer;
 
 /***/ })
 /******/ ]);
